@@ -9,4 +9,5 @@
 7. list search on C lang
 8. cli loading animation
 9. piano emulator
+10. file manager
    
