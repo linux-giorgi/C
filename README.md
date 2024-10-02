@@ -10,4 +10,4 @@
 8. cli loading animation
 9. piano emulator
 10. file manager
-   
+11. list sorting algoritms
