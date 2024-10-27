@@ -1,15 +1,25 @@
 #include<stdio.h>
 #include<stdlib.h>
+
 char string[]="----------------------------------------------------------------------------------------------------------------------------------";
+
+//size of string variable
 short size = sizeof(string)/sizeof(string[0]);
-void animation(){
+
+//animation function 
+void animation()
+{
 	for(short i;i<size;i++){
-		system("sleep 0.5");system("clear");
+		system("sleep 0.5");
+		system("clear");
 		string[i]='#';
 		printf("%s\n",string);
 	}
 }
-int main(){
+
+int main()
+{
+	//start 
 	animation();
 	return 0;
 }
