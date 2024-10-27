@@ -9,7 +9,8 @@ short size = sizeof(string)/sizeof(string[0]);
 //animation function 
 void animation()
 {
-	for(short i;i<size;i++){
+	for(short i;i<size;i++)
+	{
 		system("sleep 0.5");
 		system("clear");
 		string[i]='#';
