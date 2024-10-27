@@ -6,7 +6,7 @@
 4. Number Game
 5. Password generator
 6. Calling assembly witch C
-7. list search on C lang
+7. 
 8. cli loading animation
 9. piano emulator
 10. file manager
