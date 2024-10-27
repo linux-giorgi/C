@@ -3,7 +3,8 @@
 
 void edit_line(char* buffer, int current_line) 
 {
-	for (int i = 0; i < current_line; i++){
+	for (int i = 0; i < current_line; i++)
+	{
 		buffer = strchr(buffer, '\n') + 1;
 	}
 
@@ -13,6 +14,7 @@ void edit_line(char* buffer, int current_line)
 	scanf("%s", buffer);
 	strcpy(buffer + strlen(buffer), saved);
 }
+
 void main(int argc, char ** argv)
 {
 	FILE* f = fopen(argv[ 1 ], "r");
