@@ -54,7 +54,8 @@ void create_file()
     printf("Enter the name of the file to create: ");
     scanf("%s", filename);
     file = fopen(filename, "w");
-    if (file){ 
+    if (file)
+    { 
         printf("File '%s' created successfully.\n", filename);
         fclose(file);
     }
@@ -64,7 +65,8 @@ void create_file()
 int main()
 {
     int choice;
-    while(1){
+    while(1)
+    {
         printf("\n--- CLI File Manager ---\n1. List files\n2. Change directory\n3. Create directory\n4. Delete file\n5. Create file\n6. Quit\nEnter your choice: ");
         scanf("%d", &choice);
         switch(choice)
@@ -92,4 +94,5 @@ int main()
         }
     }
     
-    return 0;}
+    return 0;
+}
