@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-void edit_line(char* buffer, int current_line) 
-{
-	for (int i = 0; i < current_line; i++)
-	{
+void edit_line(char* buffer, int current_line){
+	for (int i = 0; i < current_line; i++){
 		buffer = strchr(buffer, '\n') + 1;
 	}
 
@@ -15,8 +13,7 @@ void edit_line(char* buffer, int current_line)
 	strcpy(buffer + strlen(buffer), saved);
 }
 
-void main(int argc, char ** argv)
-{
+void main(int argc, char ** argv){
 	FILE* f = fopen(argv[ 1 ], "r");
 	char buffer[1024] = { 0 };
 	fread(buffer, 1024, 1, f);
