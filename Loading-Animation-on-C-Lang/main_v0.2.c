@@ -7,10 +7,10 @@ char string[]="-----------------------------------------------------------------
 short size = sizeof(string)/sizeof(string[0]);
 
 //animation function 
-void animation()
-{
-	for(short i;i<size;i++)
-	{
+void animation(){
+	
+	// for loop for fill string list witch " # " 
+	for(short i; i < size ; i++){
 		system("sleep 0.5");
 		system("clear");
 		string[i]='#';
