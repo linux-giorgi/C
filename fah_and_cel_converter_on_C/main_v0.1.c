@@ -1,15 +1,19 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+// create defines 
 #define fahrenheit_to_celsius(fahrenheit) ((fahrenheit - 32) * 5/9)	
 #define celisus_to_fahrenheit(celsius) (celsius * 9 / 5 + 32)	
 
-short scanf_result;
+// variables
+short scanf_result_one;
 int value_for_define;
+double scanf_result_two;
 
 int main()
 {
 	while (true){
+	
 		// start label for goto function
 		start:
 
@@ -17,32 +21,46 @@ int main()
 		printf("[1] fahrenheit_to_celsius\n[2] celisus_to_fahrenheit\n[0] exit\nenter:");
 
 		// input data
-		scanf("%hd",&scanf_result);
+		scanf("%hd", &scanf_result_one);
 
-		if (scanf_result==0)
-			break;
-				
-		// testing data 
-		if (scanf_result != 1 && 2 && 3){
-
-			// if data != 1 or 2 or 3 goto start
-			puts("try again");
-			goto start;
-			
-		// else if data is true 
-		}else if (scanf_result == 1 || 2 || 3){
+		// first scan level 
+		if (scanf_result_one == 0){
 		
-			// scaning value of data
-			switch (scanf_result){
-					case 1:
-						scanf("%d",&value_for_define);
-						break;
-					case 2:
-						scanf("%d",&value_for_define);
-						break; 
+			break;
+			
+		// scan level two 		
+		} else if (scanf_result_one == 1){
+
+	        // input data as fahrenheit	
+	        printf("enter fahrenheit: ");
+			scanf("%d", &value_for_define);
+
+			// convert fahrenheit_to_celsius
+			scanf_result_two = fahrenheit_to_celsius(value_for_define);	
+
+			// output celisus value
+			printf("%lf\n", scanf_result_two);	
+
+		//scan level three		
+		}else if (scanf_result_one == 2){
+
+			// input data as celsius
+			printf("enter celsius: ");
+			scanf("%d", &value_for_define);
+
+			// convert celisus_to_fahrenheit
+			scanf_result_two = celisus_to_fahrenheit(value_for_define);	
+
+			// output celisus value
+			printf("%lf\n", scanf_result_two);
 				
-			}// switch 
-		} // else if
-	 }// while 
+		} else {
+			// go to start label
+			printf("try again!\n");
+			goto start;
+		}
+		
+	 } 
+
 	return 0;
 }
