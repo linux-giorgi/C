@@ -30,7 +30,7 @@ int main()
 			goto start;
 			
 		// else if data is true 
-		}else if (scanf_result == 1 && 2 && 3){
+		}else if (scanf_result == 1 || 2 || 3){
 		
 			// scaning value of data
 			switch (scanf_result){
