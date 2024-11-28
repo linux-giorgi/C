@@ -67,17 +67,22 @@ double macro_result;
 int main()
 {
     while (1) {
+
+
+
+
+
+        // main menu 
         Display_menu();
 
         // Get user input
         if (scanf("%hd", &scanf_result_one) != 1) {
             printf("Invalid input. Please enter a number.\n");
-            while (getchar() != '\n'); // Clear the input buffer
+            while (getchar() != '\n');
             continue;
         }
 
 
-        // Handle menu choices
         switch (scanf_result_one) {
             case 1:
 
@@ -87,60 +92,331 @@ int main()
         		if (scanf("%hd", &scanf_result_two) != 1) 
             	printf("Invalid input. Please enter a number.\n");
         		
+
+
         		switch (scanf_result_two){
-
-        			case 1:
-        				scanf("%hd",&scanf_result_three);
-
-        				switch (scanf_result_three){
-        					case 1:
-        						macro_result = Celisus_to_Fahrenheit(10);
-        						printf("result: %f\n", macro_result);
-
-        						break;
-        					
-        					case 2:
-        						break;
-        					case 3:
-        						break;
-        					case 4:
-        						break;
-        					case 5:
-        						break;
-        					case 6:
-        						break;
-        				}
+                	case 1:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Celisus_to_Fahrenheit(result_for_convert);           
+                    printf("result: %f\n", macro_result);
         				break;
 
         			case 2:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Celisus_to_Kelvin(result_for_convert);           
+                    printf("result: %f\n", macro_result);
         				break;
+
         			case 3:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Celisus_to_Rankine(result_for_convert);           
+                    printf("result: %f\n", macro_result);
         				break;
+
         			case 4:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Celisus_to_Newton(result_for_convert);           
+                    printf("result: %f\n", macro_result);
         				break;
+
         			case 5:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Celisus_to_Romer(result_for_convert);           
+                    printf("result: %f\n", macro_result);
         				break;
+
         			case 6:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Celisus_to_Reaumur(result_for_convert);           
+                    printf("result: %f\n", macro_result);
         				break;
+
         			case 0:
         				break;
         		}
-
                 break;
             case 2:
             	Fahrenheit_menu();
+  
+                // Get user input
+                if (scanf("%hd", &scanf_result_two) != 1) 
+                printf("Invalid input. Please enter a number.\n");
+                
+
+
+                switch (scanf_result_two){
+                    case 1:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Fahrenheit_to_Celsius(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 2:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Fahrenheit_to_Kelvin(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 3:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Fahrenheit_to_Rankine(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 4:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Fahrenheit_to_Newton(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 5:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Fahrenheit_to_Romer(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 6:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Fahrenheit_to_Reaumur(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 0:
+                        break;
+                }
                 break;
             case 3:
             	Kelvin_menu();
+
+                // Get user input
+                if (scanf("%hd", &scanf_result_two) != 1) 
+                printf("Invalid input. Please enter a number.\n");
+                
+
+
+                switch (scanf_result_two){
+                    case 1:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Kelvin_to_Celsius(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 2:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Kelvin_to_Fahrenheit(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 3:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Kelvin_to_Rankine(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 4:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Kelvin_to_Newton(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 5:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Kelvin_to_Romer(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 6:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Kelvin_to_Reaumur(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 0:
+                        break;
+                }
                 break;
             case 4:
             	Newton_menu();
+                // Get user input
+                if (scanf("%hd", &scanf_result_two) != 1) 
+                printf("Invalid input. Please enter a number.\n");
+                
+
+
+                switch (scanf_result_two){
+                    case 1:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Newton_to_Celsius(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 2:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Newton_to_Fahrenheit(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 3:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Newton_to_Rankine(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 4:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Newton_to_Kelvin(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 5:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Newton_to_Romer(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 6:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Newton_to_Reaumur(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 0:
+                        break;
+                }
                 break;
             case 5:
             	Romer_menu();
+                // Get user input
+                if (scanf("%hd", &scanf_result_two) != 1) 
+                printf("Invalid input. Please enter a number.\n");
+                
+
+
+                switch (scanf_result_two){
+                    case 1:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Romer_to_Celsius(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 2:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Romer_to_Fahrenheit(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 3:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Romer_to_Rankine(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 4:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Romer_to_Kelvin(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 5:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Romer_to_Newton(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 6:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Romer_to_Reaumur(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 0:
+                        break;
+                }
                 break;
             case 6:
             	Reaumur_menu();
+                // Get user input
+                if (scanf("%hd", &scanf_result_two) != 1) 
+                printf("Invalid input. Please enter a number.\n");
+                
+
+
+                switch (scanf_result_two){
+                    case 1:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Reaumur_to_Celsius(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 2:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Reaumur_to_Fahrenheit(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 3:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Reaumur_to_Rankine(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 4:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Reaumur_to_Kelvin(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 5:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Reaumur_to_Newton(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 6:
+                    printf("enter: ");
+                    scanf("%ld",&result_for_convert);
+                    macro_result = Reaumur_to_Romer(result_for_convert);           
+                    printf("result: %f\n", macro_result);
+                        break;
+
+                    case 0:
+                        break;
+                }
                 break;
             case 0:
                 printf("Exiting program. Goodbye!\n");
