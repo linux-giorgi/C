@@ -4,6 +4,7 @@
 ***
 ## This is my roadmap for learning C.
 ### basics
+***
 1. **Syntax and source file parsing**
 ###### This is what a C source file looks like.
 ```C
@@ -15,8 +16,9 @@ int main()
   return 0;
 }
 ```
+***
 2. **Variables and data types**
-###### This is what a C source file looks like.
+###### Variable types and properties in ```byte```.
 ```C
 // Integer
 short int Var = NULL;           // bytes(2)
@@ -39,8 +41,9 @@ float = NULL;                   // bytes(4)
 double = NULL;                  // bytes(8)
 long double = NULL;             // bytes(16)
 ```
+***
 3. **Arithmetic operators**
-###### This is what a C source file looks like.
+###### Extensive arithmetic operators
 ```C
 int x = 2;
 int y = 10;
@@ -53,8 +56,9 @@ Result = y / x;
 Result = y * x;
 Result = y % x;
 ```
+***
 4. **Short form of arithmetic operators**
-###### This is what a C source file looks like.
+###### Abbreviated forms of arithmetic operators.
 ```C
 int Result = 10;
 
@@ -63,11 +67,15 @@ Result -= 2; // Result = Result - 2;
 Result /= 2; // Result = Result / 2;
 Result *= 2; // Result = Result * 2;
 ```
+* The value of ```Result``` is used first, and then ```Result``` is incremented.
+* The increment happens after the expression has been evaluated.
 ```C
 // post-increment
 Result++ // Result = Result + 1;
 Result-- // Result = Result - 1;
 ```
+* The value of ```Result``` is incremented first, and then the new value is used.
+* The increment happens before the expression is evaluated.
 ```C
 // pre-increment
 ++Result // Result = Result + 1;
