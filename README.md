@@ -1,9 +1,6 @@
 # this is a ©️ codes and projects repo
 ***
-![alt text](https://techworm.net/programming/wp-content/uploads/2018/09/c-programming-1.png)
-***
 ## This is my roadmap for learning C.
-***
 1. **Syntax and source file parsing**
 ###### This is what a C source file looks like.
 ```C
