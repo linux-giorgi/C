@@ -1,4 +1,8 @@
-#include "headers.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <ncurses.h>
+#include <string.h>
+
 void plays(const char *note) {
     char com[100];
     snprintf(com, sizeof(com), "play -q %s.wav > /dev/null 2>&1 &", note); 
