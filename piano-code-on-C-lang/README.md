@@ -1,1 +1,2 @@
-# gcc main.c -lncurses
+# RUN
+``` gcc main.c -o main -lncurses```
