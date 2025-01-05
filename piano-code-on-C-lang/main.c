@@ -3,8 +3,6 @@
 #include <ncurses.h>
 #include <string.h>
 
-#define piano-notes-list (printw("Press keys to play notes: C, D, E, F, G, A, B\n"))
-
 void plays(const char *note) {
     // function to run audio files
     char com[100];
@@ -17,7 +15,7 @@ int main() {
     cbreak();
     noecho();
     keypad(stdscr, TRUE);
-    piano-notes-list;
+    printw("Use 1, 2, 3, 4, 5, 6, 7 or q to quit.\n");
     printw("Press 'q' to quit.\n");
     refresh();
     int ch;
