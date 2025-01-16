@@ -4,8 +4,8 @@
 #include <time.h>
 
 // function headers
-int number(int x, int y);
-void result(int z, int o);
+int number(int, int);
+void result(int, int);
 
 struct main_variables {
     int first;
