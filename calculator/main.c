@@ -24,7 +24,7 @@ int main(){
 	return 0;
 }
 
-void output_result_data(float temp){
+inline void output_result_data(float temp){
 	printf("result is: %f\n", temp);
 }
 
