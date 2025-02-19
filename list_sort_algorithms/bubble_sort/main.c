@@ -5,8 +5,8 @@ int list[] = {15, 122, 411, 12, 3545, 324, 455, 234, 52, 125, 6, 7,
 
 
 void list_sort(int list[], int size){
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size - 1; j++) {
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
             if (list[j] > list[j + 1]) {
                 int temp = list[j];
                 list[j] = list[j + 1];
