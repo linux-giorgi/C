@@ -8,8 +8,9 @@
 #define RED "\033[1;31m"
 #define GREEN "\033[1;32m"
 #define BLUE "\033[1;34m"
-#define RESET "\033[0m"
 #define YELLOW "\033[1;33m"
+#define RESET "\033[0m"
+
 
 // default chars
 #define player  'X'
@@ -56,13 +57,12 @@ int main(){
 	  system("clear");
       printBoard();
       printWinner(winner);
-      printf("\nWould you like to play again? (Y/N): " );
+      printf("\n"BLUE"Would you like to play again? (Y/N): " RESET);
       scanf(" %c", &response);
       response = toupper(response);
 	} while (response == 'Y');
 	
-   printf("Thanks for playing!\n");
-
+   printf(GREEN"Thanks for playing!"RESET"\n");
    return 0;
 
 }
@@ -75,11 +75,11 @@ void resetBoard(){
 }
 void printBoard(){
 	printf(
-    	" %c | %c | %c "
+   WHITE" %c | %c | %c "
 		"\n---|---|---\n"
 		" %c | %c | %c "
 		"\n---|---|---\n"
-		" %c | %c | %c \n",
+		" %c | %c | %c \n" RESET,
 		board[0][0],board[0][1],board[0][2],
 		board[1][0],board[1][1],board[1][2],
 		board[2][0],board[2][1],board[2][2]
@@ -97,13 +97,13 @@ void playerMove(){
 	int x; 
 	int y;
 	do {
-		printf("Enter row #(1-3): ");
+		printf(YELLOW"Enter row #(1-3): "RESET);
 		scanf("%d", &x); x--;
-		printf("Enter col #(1-3): ");
+		printf(YELLOW"Enter col #(1-3): "RESET);
 		scanf("%d", &y); y--;
 		if (x || y < 4){
 			if (board[x][y] != ' '){
-				printf("move error!\n");
+				printf(RED"move error!"RESET"\n");
 			}else{
 				board[x][y] = player;
 				break;
@@ -130,11 +130,11 @@ void computerMove(){
 }
 void printWinner(char winner){
 	if (winner == player){
-		printf("YOU WIN!");
+		printf(GREEN"YOU WIN!"RESET);
 	}else if (winner == computer){
-		printf("YOU LOSE!");
+		printf(RED"YOU LOSE!"RESET);
 	}else{
-		printf("IT'S A TIE!");
+		printf(BLUE"IT'S A TIE!"RESET);
 	}
 }
 char checkWinner(){
