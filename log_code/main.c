@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 
-void _log(int8_t int_status,char *info){
+void _log(int8_t int_status,char *info){	
 	
 	// opening file
 	FILE *log_file = fopen("log.txt", "a");
