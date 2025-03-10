@@ -11,7 +11,7 @@ void print_hex(unsigned char *buffer, int num) {
     printf("\n");
 }
 
-void main(int argc, char **argv) {
+int main(int argc, char **argv) {
     FILE *f = fopen(argv[1], "r");
     unsigned char buffer[1024];
     int num_of_bytes = fread(buffer, 1, 1024, f);
