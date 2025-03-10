@@ -8,18 +8,16 @@
 #include "Defines/rea_to.c"
 #include "Defines/rom_to.c"
  
-
-
-// variables
-short scanf_result_one;
-short scanf_result_two;
-short scanf_result_three;
-long int result_for_convert;
-double macro_result;
-
 int main()
 {
-    while (1) {
+   	// variables	 
+	short scanf_result_one;
+	short scanf_result_two;
+	short scanf_result_three;
+	long int result_for_convert;
+	double macro_result;
+
+	while (1) {
 
         // main menu 
         Display_menu();
