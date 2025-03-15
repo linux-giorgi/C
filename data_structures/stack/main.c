@@ -11,6 +11,51 @@ typedef struct {
 } Stack;
 
 // Function to initialize the stack
+void initialize(Stack *stack);
+
+// Function to check 
+bool isEmpty(Stack *stack);
+
+// Function to check if the stack is full
+bool isFull(Stack *stack);
+
+// Function to push an element onto the stack
+void push(Stack *stack, int );
+    
+// Function to pop an element from the stack
+int pop(Stack *stack);
+
+// Function to peek the top element of the stack
+int peek(Stack *stack);
+
+int main() {
+    Stack stack;
+   
+	 // Initialize the stack
+    initialize(&stack);  
+
+    // Push elements to the stack 
+    push(&stack, 3);
+    printf("Top element: %d\n", peek(&stack));
+
+    push(&stack, 5);
+    printf("Top element: %d\n", peek(&stack));
+
+    push(&stack, 2);
+    printf("Top element: %d\n", peek(&stack));
+
+    push(&stack, 8);
+    printf("Top element: %d\n", peek(&stack));
+
+    // Pop elements from the stack and print the stack after each pop
+    while (!isEmpty(&stack)) {
+        printf("Top element: %d\nPopped element: %d\n", peek(&stack), pop(&stack));
+    }
+
+    return 0;
+}
+
+// Function to initialize the stack
 void initialize(Stack *stack) {
     stack->top = -1;  
 }
@@ -66,31 +111,3 @@ int peek(Stack *stack) {
     
 	return stack->arr[stack->top];
 }
-
-int main() {
-    Stack stack;
-   
-	 // Initialize the stack
-    initialize(&stack);  
-
-    // Push elements to the stack 
-    push(&stack, 3);
-    printf("Top element: %d\n", peek(&stack));
-
-    push(&stack, 5);
-    printf("Top element: %d\n", peek(&stack));
-
-    push(&stack, 2);
-    printf("Top element: %d\n", peek(&stack));
-
-    push(&stack, 8);
-    printf("Top element: %d\n", peek(&stack));
-
-    // Pop elements from the stack and print the stack after each pop
-    while (!isEmpty(&stack)) {
-        printf("Top element: %d\nPopped element: %d\n", peek(&stack), pop(&stack));
-    }
-
-    return 0;
-}
-
