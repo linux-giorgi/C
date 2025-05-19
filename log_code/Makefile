@@ -1,30 +1,29 @@
-# Thus is Makefile for Default C code
-# You can edit it if it needed
+# Compiler and flags
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c99
 
+# Source files
+SRCS = main.c log.c
+OBJS = $(SRCS:.c=.o)
 
-# File ariables
-MAIN := main.c
-XMAIN := main
-OUT := a.out
+# Output binary
+TARGET = main.elf
 
-# System variables
-GCC = gcc
-CLEAR = clear
-RMRF = rm -rf
+# Default rule
+all: $(TARGET)
 
-# System flags
-O = -o  
+# Link object files into the target binary
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
 
-# Make Scripts
-make:  # For default program 
-	$(GCC) ${MAIN} $(O) ${XMAIN}
+# Compile .c files into .o files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-start:
-	echo "#include <stdio> int main(void){ return 0; }"> ${MAIN} 
+# Clean build artifacts
+clean:
+	rm -f *.elf *.o *.txt
 
-clear: # For clear terminall and executables
-	$(RMRF) ${XMAIN} ${OUT} & $(CLEAR)
+# Optional: Phony targets
+.PHONY: all clean
 
-gdb:   # For check with gnu debugger program 
-	$(CLEAR) & 
-	$(GCC) -O0 -g3 ${MAIN} $(O) ${XMAIN}
