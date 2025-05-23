@@ -1,12 +1,8 @@
 
-main : main.o 
-	gcc main.o -o  main
-
-
-main.o : main.c
-	gcc -c main.c -o main.o
+main : 
+	gcc main.c password.c -o main.elf
 
 clean :
-	rm -rf main main.o
+	rm -rf *.elf *.o
 
 	
