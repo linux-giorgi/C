@@ -36,7 +36,7 @@ int main(void) {
 					(unsigned char) ifr.ifr_hwaddr.sa_data[4],
 					(unsigned char) ifr.ifr_hwaddr.sa_data[5]);
 
-	// inputing source mac
+	// inputing source ipv4
 	if (ioctl(file_descriptor, SIOCGIFADDR, &ifr) == -1) {
 		perror("ioctl_ipv4");
 		close(file_descriptor);
@@ -50,7 +50,7 @@ int main(void) {
 					(unsigned char) ifr.ifr_addr.sa_data[4],
 					(unsigned char) ifr.ifr_addr.sa_data[5]);
 
-	// inputing source mac
+	// inputing source mtu
 	if (ioctl(file_descriptor, SIOCGIFMTU, &ifr) == -1) {
 		perror("ioctl_mtu");
 		close(file_descriptor);
@@ -61,7 +61,7 @@ int main(void) {
 	printf("MTU: %d\n", ifr.ifr_mtu);
 
 
-	// inputing source mac
+	// inputing source flags
 	if (ioctl(file_descriptor, SIOCGIFFLAGS, &ifr) == -1) {
 		perror("ioctl_flags");
 		close(file_descriptor);
