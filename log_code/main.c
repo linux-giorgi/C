@@ -1,18 +1,17 @@
 #include "log.h"
 
-int main(){
-	
-	// program start log
-	_log(0,"start");
+int main() {
+    if (log_init("app.log") != 0) {
+        fprintf(stderr, "Failed to open log file\n");
+        return 1;
+    }
 
+    log_write(LOG_INFO, "Application started");
+    log_write(LOG_DEBUG, "This is a debug message: x = %d", 42);
+    log_write(LOG_WARN, "Low disk space");
+    log_write(LOG_ERROR, "Something went wrong!");
 
-	// low mem warning
-	_log(1,"low memory");
-
-	// error 
-	_log(2,"error");
-	
-	// program end log
-	_log(0,"end");
-	return 0;
+    log_close();
+    return 0;
 }
+

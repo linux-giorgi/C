@@ -1,36 +1,49 @@
 #include "log.h"
 
-void _log(int8_t int_status,char *info){	
-	
-	// opening file
-	FILE *log_file = fopen("log.txt", "a");
+static FILE *log_file = NULL;
 
-	// if not file create it
-	if (log_file == NULL){
-		system("> log.txt");
-	}
-	
-	char *status;
-	// input status as number
-	switch (int_status){
-		
-		case 0:
-			status = "INFO";			
-			break;
-		case 1:
-			status = "WARNING";
-			break;
-		case 2:
-			status = "ERROR";
-			break;
-		default:
-			status = "UNKNOWN";
-			break;
-	}
-
-	// input log with DATE, TIME status[ERROR, WARNING, INFO] and INFO
-	fprintf(log_file,"[%s %s] [%s] %s\n", __DATE__, __TIME__, status, info);
-	
-	// close file 
-	fclose(log_file);
+int log_init(const char *filename) {
+    log_file = fopen(filename, "a");
+    return log_file != NULL ? 0 : -1;
 }
+
+void log_close(void) {
+    if (log_file) {
+        fclose(log_file);
+        log_file = NULL;
+    }
+}
+
+static const char *level_to_string(LogLevel level) {
+    switch (level) {
+        case LOG_DEBUG: return "DEBUG";
+        case LOG_INFO:  return "INFO";
+        case LOG_WARN:  return "WARN";
+        case LOG_ERROR: return "ERROR";
+        default:        return "UNKNOWN";
+    }
+}
+
+void log_write(LogLevel level, const char *format, ...) {
+    if (!log_file) return;
+
+    // Timestamp
+    time_t now = time(NULL);
+    struct tm *t = localtime(&now);
+    fprintf(log_file, "[%04d-%02d-%02d %02d:%02d:%02d] ",
+            t->tm_year + 1900, t->tm_mon + 1, t->tm_mday,
+            t->tm_hour, t->tm_min, t->tm_sec);
+
+    // Log level
+    fprintf(log_file, "[%s] ", level_to_string(level));
+
+    // Log message
+    va_list args;
+    va_start(args, format);
+    vfprintf(log_file, format, args);
+    va_end(args);
+
+    fprintf(log_file, "\n");
+    fflush(log_file);
+}
+
